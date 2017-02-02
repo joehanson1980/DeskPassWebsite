@@ -1,0 +1,131 @@
+
+
+// classes of code, the equivalent of a noun (a word used to identify any of a class of people, place or thing )
+// e.g. buttons, forms etc etc
+
+// *************************************************************************************************************
+
+
+/**********Header**********/
+
+// Bars
+.navbar-toggle {
+	width: 2.5em;
+	height: 2.5em;
+	margin-top: 1em;
+	margin-right: 1.8em;
+  }
+  .navbar-toggle .icon-bar {
+    width: 28px;
+    height: 28px;
+  }
+ .navbar-toggle .icon-bar + .icon-bar {
+    margin-top: 6px;
+  }
+
+  /*  Icon when the collapsible content is hidden  */
+.navbar-toggle.collapsed:after{
+	font-family: "FontAwesome";
+	content: "\f0c9";
+
+  }
+
+/* Icon when the collapsible content is shown */
+.navbar-toggle:after{
+	font-family: "FontAwesome";
+    content: "\f00d";
+    font-size: 2em;
+    color: $red;
+}
+
+//== Navbar
+
+@media screen and(max-width: 819px) {
+  .navbar-collapse {
+    height: 100vh;
+  }
+}
+@media screen and(min-width: 820px) {
+  .navbar-inverse{
+    background-color: $landing-container;
+    border-color: $landing-container;
+  }
+  #navbar>.md-links-right a, #nav-logo{
+     color: $blue;
+  }
+  #navbar li>.btn-md-custom{
+    border: $border;
+    color: $landing-container;
+    height:  49px !important;
+    padding: 12px 24px;
+    margin-top: 16px;
+  }
+}
+
+//== Collapse.in Menu
+
+#navbar.navbar-collapse{
+    border-color: $navbar-inverse-bg;
+
+    &.collapsing, &.collapse.in{
+      background-color: $light-blue;
+      border-color: none;
+    }
+  }
+  .navbar-nav{
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-inverse-link-active-color;
+        background-color: $navbar-inverse-link-active-bg;
+      }
+    }
+  }
+  .main-list{
+    margin-top: 40px;
+    >li{
+      margin: auto;
+      width: 80%;
+    border-top:  2px solid $collapse-in-border-color;
+    text-align: center;
+    }
+    >li>a{
+      height: 4em;
+      padding-top: 1.2em;
+      padding-bottom: 1.2em;
+
+    }
+  }
+.btn-xs-custom{
+  margin-top: 2.5em;
+}
+#navbar li>.btn-xs-custom{
+  color: $blue;
+}
+
+  
+
+
+
+
+/*************Landing Section*************/
+
+/*.landing-section{
+  height: 46em;
+  background-color: $landing-container;
+}*/
+
+.content-panel{
+  //position: absolute;
+  //z-index: 100;
+  background-color: #F6F6F6;
+}
+#locations>.content-panel{
+  background: none; 
+  padding-top: 0;
+}
+
+
+
+

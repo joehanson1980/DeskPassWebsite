@@ -1,0 +1,901 @@
+
+
+// structural CSS that comprises the grid in various states depending on user input and environment.
+
+// *************************************************************************************************
+
+.landing-cont{
+	height: 46em;
+  	background-color: $landing-container;
+	text-align: center;
+	padding-top: 10em;
+	padding-bottom: 10em;
+}
+.landing-msg{
+	font-weight: bold;
+	font-size: 4em;
+}
+.intro-cont{
+	//height: 316px;
+	margin-top: -180px;
+}
+.intro-msg{
+	font-size: 1.5em;
+	text-align: center;
+	margin-bottom: 88px;
+	padding: 0 15px;
+}
+.content-panel{
+	padding: 115px 50px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+.intro-msg-signup{
+	text-transform: uppercase;
+	word-spacing: 0.1em;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+	margin-bottom: 50px;
+}
+.form-inline{
+	width: 100%;
+}
+.form-control{
+	font-size: 20px;
+	height: 90px;
+	text-align: center;
+	letter-spacing: 0.05em;
+	border: none;
+}
+.icon-addon {
+    position: relative;
+    display: block;
+} 
+.icon-addon .fa {
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    font-size: 14px;
+    width: 20px;
+    margin-left: -2.5px;
+    text-align: center;
+    padding: 20px 0;
+    top: 1px
+}
+.icon-addon.addon-lg .form-control {
+    //line-height: 1.33;
+    //height: 72px;
+    //font-size: 18px;
+    //padding: 10px 16px 10px 40px;
+    padding-left: 30px;
+    padding-right: 0px;
+    width: 350px;
+}
+.icon-addon.addon-lg .fa {
+    font-size: 45px;
+    margin-left: 10px;
+    //left: 11px;
+    //top: 4px;
+}
+.icon-addon .form-control {
+    //padding-left: 30px;
+    //float: left;
+    //font-weight: normal;
+}
+.icon-addon .form-control:focus + .fa,
+.icon-addon:hover .fa {
+    color: #2580db;
+}
+.form-zip .form-control{
+	width: 120px;
+}
+.btn-form-custom{
+	height: 90px;
+	width: 150px;
+	font-size: 22px;
+}
+.how-msg{
+	font-weight: bolder;
+	font-size: 4.5em;
+	margin-left: 30px;
+	text-align: left;
+	color: $light-blue;
+}
+.how-list{
+	width: 120px;
+	margin-left: 70px;
+	margin-top: 30px;
+	li{
+		font-size: 1em;
+		text-transform: uppercase;
+		line-height: 2.2em;
+		letter-spacing: 0.1em;
+		font-weight: bolder;
+	}
+}
+.img-desk{
+	width: 350px;
+	margin-left: 30px;
+}
+.how-row{
+	margin-top: 30px;
+}
+.how-msg-subtitle{
+	font-weight: bolder;
+	font-size: 3em;
+	text-align: left;
+	color: $light-blue;
+	margin-top: 40px;
+}
+.how-col-2{
+	margin-left: 30px;
+}
+.how-msg-blurb{
+	font-size: 1.6em;
+	text-align: left;
+	padding-right: 10px;
+}
+.locations-msg{
+	@extend .how-msg;
+	margin-left: 0;
+}
+.locations-msg-blurb{
+	@extend .intro-msg;
+	font-size: 1.3em;
+	text-align: left;
+	//padding-left: 40px;
+	padding-right: 0;
+	margin-top: 40px;
+}
+
+
+
+
+
+// Laptop and Pc screen specific
+
+@media screen and (min-width: 820px) {
+	#navbar .md-hidden{
+		display: none !important;
+		}
+	#navbar .md-links-right{
+		float: right;
+		margin-right: 10px;
+		}
+}
+
+// Mobile and Tablet screen specific
+
+@media screen and (max-width: 819px) {
+	#navbar .xs-hidden{
+		display: none;
+	}
+}
+
+
+
+//------------------------------------------------------------------------------
+
+//----------TEST---------------//
+
+.text-blue{
+	color: $blue;
+}
+.text-red{
+	color: $red;
+}
+.text-aqua{
+	color: $aqua;
+}
+.text-white{
+	color: $white;
+}
+
+//--------------------------------------------------------
+.locations-cont .hovereffect{
+	
+}
+.hovereffect{
+	//@include hover-effect(391px, 325px);
+	//min-width: 300px;
+	width: 50%;
+	height: 391px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	background-color: $white;
+
+}
+.hovereffect .overlay{
+	@include hover-effect-overlay;
+}
+.hovereffect p{
+	@include locations-box-text;
+	@include hover-effect-p;
+}
+.hovereffect .pic{
+	@include return-hover-effect-pic;
+}
+.hovereffect:hover .pic{
+	@include hover-effect-pic;
+}
+.locations-btns{
+	display: inline-block;
+	margin-top: 110px;
+	text-align: center;
+}
+.features-btn{
+	display: inline-block;
+	margin-right: 50px;
+	@include button-variant($blue, $aqua, $aqua)
+	@include button-size(40px, 40px, 22px, 25px, 7px)
+}
+.browse-btn{
+	display: inline-block;
+	@include button-variant($blue, $aqua, $aqua)
+	@include button-size(40px, 65px, 22px, 25px, 7px)
+}
+
+
+//-------PRICE PLANS SECTIONS-----------------------------------------
+
+.plans-msg{
+	@extend .how-msg;
+	text-align: center;
+}
+.plans-msg-blurb{
+	@extend .intro-msg;
+	margin-top: 40px;
+}
+.h-line{
+	margin-right: 1px;
+	display: inline-block;
+	width: 30%;
+	height: 3px;
+}
+.line-blue{
+	 background-color: $light-blue;
+}
+.line-yellow{
+	 background-color: $yellow;
+}
+.line-aqua{
+	 background-color: $aqua;
+}
+.most-pop-box{
+	@include button-variant($blue, $yellow, $yellow)
+	@include button-size(15px, 10px, 11px, 10px, 2px)
+	position: relative;
+	top: 11px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 21%;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.lists-row{
+	margin-top: 50px;
+	//margin-right: auto;
+	//margin-left: auto;
+}
+.lists-row ul{
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.lists-row ul>li{
+
+}
+.list-mini{
+	margin-right: -30px;
+	margin-left: 20px;
+}
+.list-full-time{
+	margin-right: 20px;
+	margin-left: -30px;
+}
+.list-title{
+	margin-bottom: 20px;
+	font-size: 14px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.list-price{
+	margin-bottom: 30px;
+	font-size: 50px;
+	font-weight: bold;
+}
+.list-price span{
+	font-size: 30px;
+	font-weight: normal;
+}
+.list-price>.list-dollar{
+	position: relative;
+	bottom: 13px;
+	margin-right: 4px;
+}
+.list-price-mini{
+	color: $light-blue;
+}
+.list-price-part{
+	color: $yellow;
+}
+.list-price-full{
+	color: $aqua;
+}
+.list-visits{
+	margin-bottom: 25px;
+	letter-spacing: -0.2px;
+	font-size: 21px;
+	font-weight: bold;
+}
+.list-details{
+	margin-bottom: 5px;
+}
+.sign-up-mini{
+	@include button-variant($white, $light-blue, $light-blue)
+	@include button-size(30px, 40px, 22px, 10px, 5px)
+	position: absolute;
+	top: 370px;	
+	>a{
+		display: block;
+		color: $white;
+	}
+}
+.sign-up-part{
+	@include button-variant($blue, $yellow, $yellow)
+	@include button-size(30px, 40px, 22px, 10px, 5px)
+	position: absolute;
+	top: 370px;
+	left: 21px;
+	>a{
+		display: block;
+		color: $blue;
+	}
+}
+.sign-up-full{
+	@include button-variant($blue, $aqua, $aqua)
+	@include button-size(30px, 40px, 22px, 10px, 5px)
+	position: absolute;
+	top: 370px;
+	>a{
+		display: block;
+		color: $blue;
+	}
+}
+.pricing{
+	display: inline-block;
+	margin-top: 200px;
+
+	>a{
+		margin-right: 7px;
+		display: inline-block;
+		color: $blue;
+		font-size: 20px;
+		font-weight: bold;
+		transition: .2s ease-out;
+		-webkit-transition:.2s ease-out;
+    	-moz-transition:.2s ease-out;
+    	border-bottom: 3px solid $aqua;
+    	height: 31px;
+		position: relative;
+		top: 0px;
+	}
+	>a:hover{
+		border-bottom: 3px solid $yellow;
+		height: 36px;
+		position: relative;
+		top: -5px;
+	}
+	>.disabled-link{
+		pointer-events: none;
+		cursor: default;
+		border-bottom: none;
+		color: grey;
+	}
+}
+
+//------------------DESKPASSERS SECTION--------------------------------
+
+.clients-cont{
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+}
+.clients-msg{
+	@extend .how-msg;
+	font-size: 2.5em;
+	text-align: center;
+}
+.clients-msg-blurb{
+	@extend .intro-msg;
+	margin-top: 50px;
+	font-size: 1.35em;
+}
+.clients-hovereffect{
+	@include hover-effect(240px, 33.33%);
+}
+.clients-hovereffect .clients-overlay{
+	@include hover-effect-overlay(rgba(0,0,0,0.1));
+}
+.clients-hovereffect .clients-overlay p{
+	@include locations-box-text(20px,170px,2.2em,bolder,1.3em);
+	@include hover-effect-p;
+	line-height: 0.7em;
+	transition: .2s ease-out;
+	-webkit-transition:.2s ease-out;
+    -moz-transition:.2s ease-out;
+	position: relative;
+	top: 0px;
+}
+.clients-hovereffect:hover .clients-overlay p{
+	position: relative;
+	top: -110px;
+	color: $aqua;
+}
+.clients-hovereffect small{
+	font-weight: normal;
+	font-size: 0.4em;
+	text-transform: uppercase;
+}
+.clients-overlay-link{
+	color: $white;
+	transition: .2s ease-out;
+	-webkit-transition:.1s ease-out;
+	-moz-transition:.1s ease-out;
+	position: relative;
+	top: 50px;
+	border-bottom: 3px solid $aqua;
+	display: block;
+	height: 25px;
+}
+.clients-overlay-link:hover{
+	position: relative;
+	top: 45px;
+	border-bottom: 3px solid $yellow;
+	display: block;
+	height: 30px;   
+}
+.johns-line{
+	width: 161px;
+}
+.lukes-line{
+	width: 161px;
+}
+.quantass-line{
+	width: 190px;
+}
+.clients-hovereffect .clients-pic{
+	@include return-hover-effect-pic(all 0.3s ease-out);
+}
+.clients-hovereffect:hover .clients-pic{
+	@include hover-effect-pic(scale(1.2), all .6s ease-out);
+}
+
+
+//----------------QUOTES SECTION---------------------------------	
+
+.quotes-cont{
+	padding: 0;
+	margin-bottom: 100px;
+}
+
+.quotes-boxes{
+	@include hover-effect(380px, 49.73%, $light-grey);
+	margin: 1px;
+}
+.quotes-wrapper{
+	width: 80%;
+	position: relative;
+	margin: -200px auto 0 auto;
+	text-align: center;
+}
+.ind-quote{
+	h3{
+		font-size: 50px;
+	}
+	p{
+		font-weight: bold;
+	}
+}
+#quote1, #quote4, #quote7{
+	h3{
+		color: $red;
+	}
+	small,p{
+		color: $blue;
+	}
+}
+#quote2, #quote5, #quote8{
+	h3{
+		color: $yellow;
+	}
+	small,p{
+		color: $blue;
+	}
+}
+#quote3, #quote6{
+	h3{
+		color: $blue;
+	}
+	small,p{
+		color: $blue;
+	}
+}
+.r-words, .r-words-1, .r-words-2, .r-words-3{
+	.ind-quote{
+		position: absolute;
+		opacity: 1;
+		overflow: hidden;
+		width: 100%;
+	}
+}
+.r-words div:nth-child(1){
+	animation: rotateWordsFirst 20s linear infinite normal 0s;
+}
+.r-words div:nth-child(2) { 
+	animation: rotateWordsFirst 20s linear infinite normal 10s;
+}
+@keyframes rotateWordsFirst {
+    0% {transform: translateY(-300px)}
+    2% {transform: translateY(290px)}
+    3% {transform: translateY(284px)}
+    4%, 48% {transform: translateY(290px)}
+	50% {transform: translateY(286px)}
+	52%, 100% {transform: translateY(1000px)}
+}
+.r-words-1 div:nth-child(1){
+	animation: rotateWordsSecond 28s linear infinite 0s;
+}
+.r-words-1 div:nth-child(2) { 
+	animation: rotateWordsSecond 28s linear infinite 14s;
+}
+@keyframes rotateWordsSecond {
+    0% {transform: translateY(-300px)}
+    2% {transform: translateY(290px)}
+    3% {transform: translateY(284px)}
+    4%, 48% {transform: translateY(290px)}
+	50% {transform: translateY(286px)}
+	52%, 100% {transform: translateY(1000px)}
+}
+.r-words-2 div:nth-child(1){
+	animation: rotateWordsThird 16s linear infinite 0s;
+}
+.r-words-2 div:nth-child(2) { 
+	animation: rotateWordsThird 16s linear infinite 8s;
+}
+@keyframes rotateWordsThird {
+    0% {transform: translateY(-400px)}
+    1% {transform: translateY(290px)}
+    3% {transform: translateY(284px)}
+    4%, 49% {transform: translateY(290px)}
+	50% {transform: translateY(286px)}
+	51%, 100% {transform: translateY(1000px)}
+}
+.r-words-3 div:nth-child(1){
+	animation: rotateWordsFourth 26s linear infinite 0s;
+}
+.r-words-3 div:nth-child(2) { 
+	animation: rotateWordsFourth 26s linear infinite 13s;
+}
+@keyframes rotateWordsFourth {
+  	0% {transform: translateY(-300px)}
+    2% {transform: translateY(290px)}
+    3% {transform: translateY(284px)}
+    4%, 48% {transform: translateY(290px)}
+	50% {transform: translateY(286px)}
+	52%, 100% {transform: translateY(1000px)}
+}
+
+//-----------------FOOTER SECTION ----------------------
+.footer-cont{
+	background-color: $blue;
+	padding: 100px 50px 130px;
+}
+.footer-logo{
+	margin-left: 40px;
+	font-size: 25px;
+	color: $white;
+}
+#lists-section{
+	margin-top: 100px;
+	margin-bottom: 70px;
+	
+	.footer-list li a{
+		color: $white;
+		font-weight: normal;
+		font-size: 16px;
+	}
+}
+.footer-list{
+	display: inline-block;
+	margin-right: 20px;
+	vertical-align: top;
+	font-size: 16px;
+	line-height: 2em;
+	color: $white;
+}
+.footer-list-title{
+	margin-bottom: 40px;
+	color: $light-blue;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+#lists-section .blog-list li:nth-child(2) a{
+	line-height: 1.2em;
+	font-size: 32px;
+	font-weight: bold;
+}
+.rights-reserved{
+	color: $light-blue;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 40px;
+}
+.twitter-handle{
+	color: grey;
+	font-weight: bold;
+	font-size: 22px;
+	float: right;
+	opacity: 0.3;
+}
+
+
+//-------------------FLEXBOX TEST-----------------------
+
+#locations1 .content-panel{
+	padding-left: 0;
+	padding-right: 0;
+	background-color: $grey;
+
+	@media (min-width: 820px) and (max-width: 1099px){
+		padding: 115px 95px;
+		//margin-bottom: 50px;
+		//text-align: center;
+	}
+	@media (max-width: 819px){
+		margin: 20px;
+	}
+}
+.locations-msg1{
+	font-size: 170px;
+	font-weight: bold;
+
+	@media (min-width: 820px) and (max-width: 1099px){
+		font-size: 80px;
+	}
+	@media (max-width: 819px){
+		font-size: 25px;
+	}
+}
+.locations-msg-blurb1{
+	margin: 0px 40px;
+	padding: 0px 20px;
+	font-size: 22px;
+
+	@media (min-width: 820px) and (max-width: 1099px){
+		margin: 0px 0px 40px 0px;
+		padding-left: 6px;
+		text-align: left;
+		font-size: 19px;
+	}
+	@media (max-width: 819px){
+		margin: 0px 0px 40px 0px;
+		font-size: 18px;
+	}
+}
+//-----------------PIC GALLERY ------------------------------
+.pics-cont{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: flex-end;
+
+	@media (min-width: 1100px){
+		//flex-direction: row;
+	}
+}
+.pics-cont div{
+	height: 25vw;
+	max-height: 400px;
+	//min-width: 260px;
+	//width: 100vw;
+	flex: 0 0 100%;
+	overflow: hidden;
+	//display: flex;
+	//flex-direction: column;
+	z-index: 0;
+	position: relative;
+
+	@media (min-width: 1100px){
+		//width: 25vw;
+		flex: 1 1 25%;
+		transition: all .2s;
+	}
+	@media (min-width: 820px) and (max-width: 1099px){
+		height: 35vw;
+		//width: 50vw;
+		flex: 1 0 50%;
+		transition: all .2s;
+	}
+	@media (max-width: 819px){
+		max-height: 625px;
+		height: 65vw;
+	}
+}
+.pics-cont div:nth-child(1){order: 1}
+.pics-cont div:nth-child(2){order: 2;}
+.pics-cont div:nth-child(3){order: 3;}
+.pics-cont div:nth-child(4){order: 4;}
+.pics-cont div:nth-child(5){order: 5;}
+.pics-cont div:nth-child(6){order: 6;}
+.pics-cont div:nth-child(7){order: 7;}
+.pics-cont div:nth-child(8){order: 8;}
+.pics-cont div:nth-child(9){order: 9;}
+.pics-cont div:nth-child(10){order: 10;}
+.pics-cont div:nth-child(11){order: 11;}
+
+.pics-cont div:nth-child(3),.pics-cont div:nth-child(4),
+.pics-cont div:nth-child(6),.pics-cont div:nth-child(8),
+.pics-cont div:nth-child(n+8){
+
+	@media (max-width: 819px){
+			display: none;
+	}
+}
+.pics-cont div:first-child{ // nested flex container
+	max-height: 550px;
+	flex: 1 0 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+
+
+	@media (min-width: 1100px){
+		height: 550px;
+		flex: 1 0 50%;
+		flex-wrap: nowrap;
+	}
+	@media (min-width: 820px) and (max-width: 1099px){
+		height: auto;
+		align-items: flex-start;
+	}
+	@media (max-width: 819px){
+		height: auto;
+		align-items: center;
+	}
+}
+.blurb h1{
+	flex: 1 1 75%;
+}
+.blurb p{
+	flex: 1 1 25%;
+}
+.hovereffect1{
+	background-color: $white;
+}
+.inner{
+	//position: absolute;
+	//left: 0;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+div.inner>.inner-i{
+	font-size: 32px;
+	cursor: pointer;
+	position: absolute;
+	top: 20px;
+	right: 30px;
+}
+.inner-h{
+	
+}
+.inner-h p{
+	//display: none;
+}
+.hovereffect1>div.inner>.inner-h-title{
+	@include locations-box-text($pad-l:30px, $pad-t:20px, $font-size:2.5em, $font-weight:bold,$line-height:1em);
+	text-align: left;
+	color: 	$blue;		
+}
+.hovereffect1>div.inner>.inner-h-text{
+	@include locations-box-text($pad-l:30px, $pad-t:25px, $font-size:1.3em, $font-weight:normal,$line-height:1.6em);
+	padding-right: 30px;
+	text-align: left;
+	color: 	$blue;		
+}
+.hidden{
+	display: none;
+}
+.pic1{
+	
+	width: 100%;
+	height: 100%;
+}
+.open{
+
+}
+
+//------- FLEXBOX PICS OVERLAY----------------------------------
+
+.pics-cont div:nth-child(1){ //nested flex container
+
+}
+.pics-cont div a{
+	//flex: 1;
+	z-index: 1;
+	//flex: 0 0 100%;
+}
+.pics-cont div .overlay{
+	z-index: 10;
+	//flex: 1 1 100%;
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+	background-color: rgba(0,0,0,0.3);
+	color: $white;
+}
+.hovereffect1>a>div>p:first-child{
+	@include locations-box-text;
+	//@include hover-effect-p($width:100%, $height:100%);
+}
+.pics-cont div .pic1{
+	@include return-hover-effect-pic;
+}
+.pics-cont div:hover .pic1{
+	@include hover-effect-pic;
+}
+
+//------- PICS CLICK jQUERY OVERLAY----------------------------------
+
+
+//-----------FLEXBOX TEST BUTTONS ---------------------------
+
+
+/*.locations-btns1{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 110px;
+	text-align: center;
+
+}
+.features-btn1{
+	display: inline-block;
+	//flex-basis: 70%;
+	margin-right: 50px;
+	margin-bottom: 50px;
+	@include button-variant($blue, $aqua, $aqua)
+	@include button-size(40px, 40px, 22px, 25px, 7px)
+}
+.browse-btn1{
+	//flex-basis: 70%;
+	display: inline-block;
+	@include button-variant($blue, $aqua, $aqua)
+	@include button-size(40px, 65px, 22px, 25px, 7px)
+}*/
+//---------MEDIA QUERY FOR LOCATIONS SECTION @MAX-WIDTH 819PX -------------
+/*@media (max-width: 819px) {
+	.locations-btns1{
+		display: flex;
+		flex-direction: column;
+		//justify-content: center;
+		//flex-wrap: wrap;
+		margin-top: 50px;
+		text-align: center;
+}
+	.features-btn1{
+		width: 90%;
+		margin-right: 0px;
+		//margin-bottom: 50px;
+		//@include button-variant($blue, $aqua, $aqua)
+		@include button-size(12px, 20px, 16px, 20px, 7px)
+	}
+	.browse-btn1{
+		width: 90%;
+		//@include button-variant($blue, $aqua, $aqua)
+		@include button-size(12px, 20px, 16px, 20px, 7px)
+	}
+}*/

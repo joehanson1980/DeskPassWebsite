@@ -1,0 +1,43 @@
+
+
+// Core styles which are commonly applied to an element using the element selector itself.
+// e.g. html, h1, h2 etc ec
+
+// ***************************************************************************************
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+$body-bg:               $grey;
+
+/*html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}*/
+a{
+	font-size: 1.1em;
+	font-weight: bolder;
+	text-decoration: none !important;
+}
+ul{
+	list-style: none;
+}
+li{
+	text-decoration: none;
+}
+
+// Landing section
+
+
+
+//---- end of Landing Section 
+
+.intro-msg-signup{
+	color: $red;
+}
+.fa-envelope-o{
+	color: $active-link-color;
+}
