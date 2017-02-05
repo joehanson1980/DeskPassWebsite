@@ -1,4 +1,13 @@
 jQuery(document).ready(function($) {
+	$(window).resize(function() {
+		$('.pics-cont div').css('flex', '');
+		$('.hovereffect1').each(function(index) {
+			if($(this).find('a').hasClass('hidden')) {
+
+				$('#he' + index + ' i.inner-i').click();
+			}
+		});
+	});
 	var lastEleOnRow;
 
 //--------------------- FUNCTION DECLARATIONS ---------------------------------
@@ -45,7 +54,6 @@ jQuery(document).ready(function($) {
 
 	}
 //---------------------------------------------------------------------
-
 	function slideReturn(element) {
 		var elementPP = element.parent().parent();
 
@@ -79,17 +87,21 @@ jQuery(document).ready(function($) {
 
 	// check to see if viewport is less than 820px if so then 
 		// proceed with default behaviour
-		if (window.matchMedia('(max-width: 819px)').matches){	
-
-		} else {
+		
 	
 			// watch out for any clicks on .hovereffect1(pictures) class divs
-			// if clicked, do the following..   
-			$('.pics-cont').on('click.slideout', '.hovereffect1', function(event) {				
+			// if clicked, do the following..
+
+			$('.pics-cont').on('click.slideout', '.hovereffect1', function(event) {	
+
+					if (window.matchMedia('(max-width: 819px)').matches){	
+
+					} else {			
 
 					// if viewport is greater than 819px then proceed with the following...
 					event.preventDefault();
 					var thisEle = $(this);
+					
 					var thisEleWidth = thisEle.width();
 
 					//check to see if any div(picture) is already in expanded state
@@ -112,7 +124,6 @@ jQuery(document).ready(function($) {
 					.end()
 					//call function to double the size of the clicked div (picture)
 						.css('flex', '1 0 ' + newFlexGrowValue(2, thisEle))
-					
 					// call function to see if clicked div is right most div on the row
 					if (isPicLastOnRow('.pics-cont', thisEle, thisEleWidth)) {
 						//if it is then shrink the clicked divs left sibling
@@ -127,9 +138,8 @@ jQuery(document).ready(function($) {
 							.css({display: 'block', opacity: 0}) //display the contents of div.inner
 							.fadeTo(1000, 1);// fade them in
 				}
-					
+				}	
 			});
-		}
 
     //----------------------------- END OF SLIDE OUT -------------------------------
     

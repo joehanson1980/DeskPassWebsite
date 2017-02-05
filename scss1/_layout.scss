@@ -28,8 +28,8 @@
 .content-panel{
 	padding: 115px 50px;
 	margin-bottom: 50px;
-	text-align: center;
-}
+	text-align: center;  
+}  
 .intro-msg-signup{
 	text-transform: uppercase;
 	word-spacing: 0.1em;
@@ -692,31 +692,21 @@
 	flex-direction: row;
 	justify-content: flex-end;
 	align-items: flex-end;
-
-	@media (min-width: 1100px){
-		//flex-direction: row;
-	}
 }
 .pics-cont div{
 	height: 25vw;
 	max-height: 400px;
-	//min-width: 260px;
-	//width: 100vw;
 	flex: 0 0 100%;
 	overflow: hidden;
-	//display: flex;
-	//flex-direction: column;
 	z-index: 0;
 	position: relative;
 
 	@media (min-width: 1100px){
-		//width: 25vw;
 		flex: 1 1 25%;
 		transition: all .2s;
 	}
 	@media (min-width: 820px) and (max-width: 1099px){
 		height: 35vw;
-		//width: 50vw;
 		flex: 1 0 50%;
 		transition: all .2s;
 	}
