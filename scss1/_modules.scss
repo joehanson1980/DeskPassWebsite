@@ -9,40 +9,29 @@
 /**********Header**********/
 
 // Bars
-.navbar-toggle {
-	width: 2.5em;
-	height: 2.5em;
-	margin-top: 1em;
-	margin-right: 1.8em;
-  }
-  .navbar-toggle .icon-bar {
-    width: 28px;
-    height: 28px;
-  }
- .navbar-toggle .icon-bar + .icon-bar {
-    margin-top: 6px;
-  }
+
 
   /*  Icon when the collapsible content is hidden  */
-.navbar-toggle.collapsed:after{
-	font-family: "FontAwesome";
-	content: "\f0c9";
-
-  }
+//.navbar-toggle.collapsed:after{
+//	font-family: "FontAwesome";
+//	content: "\f0c9";
+//
+//  }
 
 /* Icon when the collapsible content is shown */
-.navbar-toggle:after{
-	font-family: "FontAwesome";
-    content: "\f00d";
-    font-size: 2em;
-    color: $red;
-}
+//.navbar-toggle:after{
+//	font-family: "FontAwesome";
+//    content: "\f00d";
+//    font-size: 2em;
+//    color: $red;
+//}
 
 //== Navbar
 
 @media screen and(max-width: 819px) {
   .navbar-collapse {
     height: 100vh;
+    width: 100vw;
   }
 }
 @media screen and(min-width: 820px) {
@@ -54,7 +43,7 @@
      color: $blue;
   }
   #navbar li>.btn-md-custom{
-    border: $border;
+    border: 1px solid $red;
     color: $landing-container;
     height:  49px !important;
     padding: 12px 24px;
@@ -68,8 +57,9 @@
     border-color: $navbar-inverse-bg;
 
     &.collapsing, &.collapse.in{
-      background-color: $light-blue;
+      background-color: lighten($blue, 7%);
       border-color: none;
+      height: 100vh;
     }
   }
   .navbar-nav{
@@ -83,22 +73,34 @@
     }
   }
   .main-list{
+    font-family: $font-Sans;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -1px;
     margin-top: 40px;
     >li{
       margin: auto;
       width: 80%;
-    border-top:  2px solid $collapse-in-border-color;
-    text-align: center;
+      border-top:  2px solid $collapse-in-border-color;
+      text-align: center;
     }
     >li>a{
       height: 4em;
       padding-top: 1.2em;
       padding-bottom: 1.2em;
-
     }
   }
 .btn-xs-custom{
   margin-top: 2.5em;
+  transition: .2s ease-out;
+  -webkit-transition:.2s ease-out;
+  -moz-transition:.2s ease-out;
+  position: relative;
+  top: 0px;
+}
+.btn-xs-custom:hover{
+  position: relative;
+  top: -3px;
 }
 #navbar li>.btn-xs-custom{
   color: $blue;

@@ -3,7 +3,101 @@
 // structural CSS that comprises the grid in various states depending on user input and environment.
 
 // *************************************************************************************************
+// Navigation Bar/Header
+nav{
 
+	@media screen and (max-width: 819px) {
+		height: 75px;
+	}
+}
+nav>div.container{
+	padding-top: 20px;
+
+	@media screen and (max-width: 819px) {
+		padding-top: 0;
+	}
+}
+.navbar-header{
+	
+	@media screen and (max-width: 819px) {
+		height: 75px;
+		margin-top: 0;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+.navbar-toggle {
+	margin-top: 0.7em;
+  }
+.navbar-brand{
+	font-family: $font-Sans;
+	font-weight: 700;
+	font-size: 32px;
+	letter-spacing: -1px;
+
+	@media screen and (max-width: 819px) {	
+		font-size: 25px;
+		font-weight: 600;
+		letter-spacing: 0.1px;
+		margin-top: -0.1em;
+	}
+}
+#logo-line{
+	width: 44px;
+	border: 2px solid #50c3c3;
+	position: relative;
+	left: 13px;
+	top: -7px;
+
+	@media screen and (max-width: 819px) {
+		width: 38px;
+		border: 2px solid #50c3c3;
+		position: relative;
+		left: 11px;
+		top: -3px;
+	}
+}
+.md-links-right>li{
+	margin-right: 30px;
+}
+.md-links-right>li:last-child{
+	margin-right: 0;
+
+	>a{
+		font-weight: 700;
+	}
+}
+.md-links-right>li{
+	>a{
+		font-family: $font-Sans;
+		font-weight: 400;
+		font-size: 16px;
+		padding-right: 0; 
+		padding-left: 0; 
+		transition: .2s ease-out;
+		-webkit-transition:.2s ease-out;
+    	-moz-transition:.2s ease-out;
+    	border-bottom: 0 solid $yellow;
+    	height: 31px;
+		position: relative;
+		top: 0px;
+	}
+	>a:hover{
+		border-bottom: 3px solid $aqua;
+		height: 36px;
+		position: relative;
+		top: -5px;
+	}
+}
+.fa-bars{
+	display: none;
+	color: $red;
+	font-size: 36px;
+	@media screen and (max-width: 819px) {
+		display: block;
+
+	}
+}
 .landing-cont{
 	height: 46em;
   	background-color: $landing-container;
@@ -89,7 +183,7 @@
 .form-zip .form-control{
 	width: 120px;
 }
-.btn-form-custom{
+.form-custom{
 	height: 90px;
 	width: 150px;
 	font-size: 22px;
