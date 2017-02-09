@@ -28,12 +28,12 @@
 
 //== Navbar
 
-@media screen and(max-width: 819px) {
-  .navbar-collapse {
-    height: 100vh;
-    width: 100vw;
-  }
-}
+//@media screen and(max-width: 819px) {
+//  .navbar-collapse {
+//    height: 100vh;
+//    width: 100vw;
+//  }
+//}
 @media screen and(min-width: 820px) {
   .navbar-inverse{
     background-color: $landing-container;
@@ -53,43 +53,26 @@
 
 //== Collapse.in Menu
 
-#navbar.navbar-collapse{
-    border-color: $navbar-inverse-bg;
-
-    &.collapsing, &.collapse.in{
-      background-color: lighten($blue, 7%);
-      border-color: none;
-      height: 100vh;
-    }
-  }
-  .navbar-nav{
-    > .active > a {
-      &,
-      &:hover,
-      &:focus {
-        color: $navbar-inverse-link-active-color;
-        background-color: $navbar-inverse-link-active-bg;
-      }
-    }
-  }
-  .main-list{
-    font-family: $font-Sans;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: -1px;
-    margin-top: 40px;
-    >li{
-      margin: auto;
-      width: 80%;
-      border-top:  2px solid $collapse-in-border-color;
-      text-align: center;
-    }
-    >li>a{
-      height: 4em;
-      padding-top: 1.2em;
-      padding-bottom: 1.2em;
-    }
-  }
+//#navbar.navbar-collapse{
+//    border-color: $navbar-inverse-bg;
+//
+//    &.collapsing, &.collapse.in{
+//      background-color: lighten($blue, 7%);
+//      border-color: none;
+//      height: 100vh;
+//    }
+//  }
+//  .navbar-nav{
+//    > .active > a {
+//      &,
+//      &:hover,
+//      &:focus {
+//        color: $navbar-inverse-link-active-color;
+//        background-color: $navbar-inverse-link-active-bg;
+//      }
+//    }
+//  }
+//  
 .btn-xs-custom{
   margin-top: 2.5em;
   transition: .2s ease-out;

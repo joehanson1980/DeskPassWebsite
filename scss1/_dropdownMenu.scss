@@ -1,0 +1,236 @@
+
+
+
+// --------------------------**** HAMBURGER ****--------------------------------//
+
+// styling for button
+.c-hamburger { 
+    display: none;
+    
+    // styling for button
+    @media screen and (max-width: 819px) {
+            display: block;
+            position: relative;
+            top: 15px;
+            right: 15px;
+            float: right; 
+            overflow: hidden;
+            width: $button-width;
+            height: $button-height;
+            text-indent: -9999px;
+            border: none;
+            z-index: 100;
+            //cursor: pointer;
+            //transition: background $button-transistion-duration;
+
+        &:focus {
+          outline: none;
+        }
+        
+        // Create & Style Middle Bar
+        >span { 
+          display: block;
+          position: absolute;
+          top: ($button-height / 2) - ($bar-thickness / 2);
+          left: $button-pad;
+          right: $button-pad;
+          height: $bar-thickness;
+          background-color: $red;
+        }
+        
+        // Create & Style Top & Bottom Bars Respectively
+        >span::before,
+        >span::after {
+          position: absolute;
+          display: block;
+          left: 0;
+          width: 100%;
+          height: $bar-thickness;
+          background-color: $red;
+          content: "";
+        }
+
+        // Positioning Top Bar
+        >span::before { 
+          top: -$bar-thickness - $button-bar-space;
+        }
+
+        // Positioning Bottom Bar
+        >span::after { 
+          bottom: -$bar-thickness - $button-bar-space;
+        }
+    }
+}
+
+        // -----------Takes the hamburger and changes it into an 'X' and back into a hamburger ---------- //
+//--------------------- THESE COMMANDS WILL AFFECT THE BUTTON WHEN THE MENU IS ALREADY OPEN --------------------------------//
+        //------------------------- (I.E. WHEN YOU WANT TO CLOSE THE MENU) ----------------------------//   
+                                
+@media screen and (max-width: 819px) {   
+    .c-hamburger--htx {
+      background-color: $navbar-inverse-bg;
+    }
+
+    //.c-hamburger--htx span {
+    //  transition: background 0s $button-transistion-duration;
+    //}
+
+    // When the 'X' is visible and you click on it, the below value's
+    // will affect the time it takes for it (i.e. the 'X') to transform
+    // back into the hamburger
+    .c-hamburger--htx span::before,
+    .c-hamburger--htx span::after {
+      transition-duration: .3s /* will affect the 'top' & 'bottom' property for opening AND closing*/, .3s /* will affect the 'transform' property for opening AND closing*/;
+      transition-delay: .2s /* will affect the 'top' & 'bottom' property*/, 0s /* will affect the 'transform' property*/;
+    }
+
+    //---------------------------------------------------------------------------------------------------------------------
+
+    // defines the order in which each property is referred to in relation to the top bar. 
+    .c-hamburger--htx span::before {
+      transition-property: top, transform; 
+    }
+
+    // defines the order in which each property is referred to in relation to the bottom bar. 
+    .c-hamburger--htx span::after {
+      transition-property: bottom, transform;
+    }
+
+    //--------------------- THESE COMMANDS WILL AFFECT THE BUTTON WHEN THE MENU IS CLOSED --------------------------------//
+                //------------------------- (I.E. WHEN YOU WANT TO OPEN THE MENU) ----------------------------//
+   
+   //.c-hamburger--htx.is-active {
+   //  background-color: darken(rgb(255,50,100), 20%);
+   //}
+
+    // When the 'hamburger' icon is clicked this middle bar will disappear
+    .c-hamburger--htx.is-active span {
+      background: none;
+    }
+
+    // When the 'hamburger' icon is clicked, the value of the 'top' property on the top bar 
+    // (which has been set in '.c-hamburger span' above) will change to this value. 
+    // and it will transform to the below specified value.
+    .c-hamburger--htx.is-active span::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    // When the 'hamburger' icon is clicked, the value of the 'top' property on the bottom bar 
+    // (which has been set in '.c-hamburger span' above) will change to this value. 
+    // and it will transform to the below specified value.
+    .c-hamburger--htx.is-active span::after {
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+
+    // When the 'hamburger' icon is clicked, the below values will set the transition delay of each property, as described below.
+    .c-hamburger--htx.is-active span::before,
+    .c-hamburger--htx.is-active span::after {
+      transition-delay: 0s /* will affect the 'top' & 'bottom' property*/, 0.3s /* will affect the 'transform' property*/;
+    }
+}
+
+//---------------------------------- NAV --------------------------//
+
+// ----------- Overlay ----------------
+
+@media screen and (max-width: 819px) {
+    /* Overlay style */
+    .menu-overlay{
+        transition: .2s ease-in;// this property controls the transition on its way out
+        opacity: 0;
+    }
+
+    .menu-overlay.is-active {
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+        height: calc(100% - 75px);
+        top: 75px;
+        left: 0;
+        background: $overlay-background-color;
+        transition: .3s ease-out; // this property controls the transition on its way in
+        opacity: 1;
+
+    }
+
+   .overlay-nav {
+        height: 100%;
+   }
+
+    .noscroll { 
+        position: fixed; 
+        overflow-y: scroll; 
+    }
+
+   .main-list {
+        font-family: $font-Sans;
+        font-weight: 700;
+        font-size: 15px;
+        letter-spacing: -1px;
+        margin-top: 40px;
+        padding: 0 0 40px 0;
+        height: calc(100% - 40px);//100% minus the sum of the top & bottom margins
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        >li{
+            width: 80%;
+            height: calc(100% / 7);
+            border-top:  2px solid $collapse-in-border-color;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 0;
+
+        }
+
+        >li>a{
+            text-decoration: none;
+            color: $white;
+            word-spacing: 3px;
+        }
+        >li>a:hover, &, :focus{
+            outline: none;
+            text-decoration: none;
+            color: $collapse-in-hover-link-color;
+            word-spacing: 3px;
+        } 
+        >li:last-child{
+            &, a{
+                min-width: 210px;
+                width: 80%;
+            } 
+            &, a:focus{
+               color: $white !important;
+            }  
+        }      
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -20,15 +20,16 @@ nav>div.container{
 .navbar-header{
 	
 	@media screen and (max-width: 819px) {
+		width: 100vw;
 		height: 75px;
 		margin-top: 0;
 		padding-left: 10px;
-		padding-right: 10px;
+		padding-right: 15px;
 	}
 }
-.navbar-toggle {
-	margin-top: 0.7em;
-  }
+//navbar-toggle {
+//	margin-top: 0.7em;
+// }
 .navbar-brand{
 	font-family: $font-Sans;
 	font-weight: 700;
@@ -89,15 +90,15 @@ nav>div.container{
 		top: -5px;
 	}
 }
-.fa-bars{
-	display: none;
-	color: $red;
-	font-size: 36px;
-	@media screen and (max-width: 819px) {
-		display: block;
-
-	}
-}
+//.menu-btn{
+//	display: none;
+//	color: $red;
+//	font-size: 36px;
+//	@media screen and (max-width: 819px) {
+//		display: block;
+//
+//	}
+//}
 .landing-cont{
 	height: 46em;
   	background-color: $landing-container;

@@ -16,28 +16,35 @@
     <nav class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> 
+         <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> 
           <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+          </button>-->
+          <button class="c-hamburger c-hamburger--htx">
+            <span class="toggle-menu" ></span>
           </button>
+          <!--<a href="#"><i id="open-nav" class="fa fa-bars menu-btn" aria-hidden="true"></i></a>
+          <a href="#"><i id="close-nav" class="fa fa-times menu-btn" aria-hidden="true"></i></a>-->
           <a id="nav-logo" class="navbar-brand" href="index1.html"><div id="logo-line"></div>deskpass</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav md-hidden main-list">
-            <li class="active"><a href="index1.html">Home</a></li>
-            <li><a href="#">Benefits & Pricing</a></li>
-            <li><a href="#">Locations</a></li>
-            <li><a href="#">Deskpass for Teams</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a class="btn btn-primary btn-xs-custom" href="#">Sign Up</a></li>
-          </ul>
-          <ul class="nav navbar-nav xs-hidden md-links-right">
-            <li><a href="#">Benefits & Pricing</a></li>
-            <li><a href="#">Locations</a></li>
-            <li><a href="#">Log In</a></li>
-            <li><a class="btn btn-danger btn-md-custom" href="#">Sign Up</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+        <div class="menu-overlay menu-overlay-hugeinc"> 
+          <div id="navbar" class="overlay-nav navbar-collapse">
+            <ul class="md-hidden main-list">
+              <li class="active"><a href="index1.html">Home</a></li>
+              <li><a href="#">Benefits & Pricing</a></li>
+              <li><a href="#">Locations</a></li>
+              <li><a href="#">Deskpass for Teams</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a class="btn btn-primary btn-xs-custom" href="#">Sign Up</a></li>
+            </ul>
+            <ul class="nav navbar-nav xs-hidden md-links-right">
+              <li><a href="#">Benefits & Pricing</a></li>
+              <li><a href="#">Locations</a></li>
+              <li><a href="#">Log In</a></li>
+              <li><a class="btn btn-danger btn-md-custom" href="#">Sign Up</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.overlay -->
       </div>
     </nav>
 

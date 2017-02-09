@@ -153,3 +153,30 @@ jQuery(document).ready(function($) {
 		slideReturn(thisElem);
 	});
 });
+
+
+// ------------------------------- MENU SLIDE DOWN ------------------------------
+
+// When user clicks the hamburger button
+$('.navbar-header').on('click', '.c-hamburger', function(event) {
+		var burger = $('.c-hamburger--htx');
+		event.preventDefault();
+
+		if (burger.hasClass('is-active')) {
+			$('.c-hamburger--htx, .menu-overlay').removeClass('is-active')
+			$('body').css({'position': '', 'overflow-y': 'auto'});
+		} else {
+			$('.c-hamburger--htx, .menu-overlay').addClass('is-active')
+			$('body').css({'position': 'fixed', 'overflow-y': 'scroll'});
+			$(window).resize(function() {
+				if (window.matchMedia('(min-width: 820px)').matches){
+					$('.c-hamburger--htx, .menu-overlay').removeClass('is-active')
+					$('body').css({'position': '', 'overflow-y': ''});
+				};
+			});
+		};
+		
+
+});
+
+//-----------------------------------------------------------------------------------
