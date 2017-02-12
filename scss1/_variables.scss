@@ -47,6 +47,13 @@ $button-transistion-duration: 0.3s;     // The transition duration
 
 //------------------------------------------------------------------
 
+// Landing Message Keyframes
+
+$midpoint-value: 55%;
+$slightly-past-midpoint: ($midpoint-value + 2%);
+$slightly-before-midpoint: ($midpoint-value - 5%);
+
+//-------------------------------------------------------------------
 
 // Bootstrap Variables
 /*******************************************************************/
