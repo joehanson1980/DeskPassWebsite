@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>deskpass</title>
     <!-- Google Webfonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Lora:400,700" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css1/main1.css" rel="stylesheet">
   </head>
@@ -67,23 +67,19 @@
 
     <section class="intro-section">
       <div class="container intro-cont content-panel">
-        <h3 class="intro-msg">We're a monthly coworking subscription poviding affordable, flexible access to over 70 wonderful, diverse workspaces to work, learn and meet in Chicago & LA.</h3> 
+        <h3 class="intro-msg">We’re a monthly coworking subscription in Chicago, LA, & Denver providing affordable, flexible access to over 75 wonderful, diverse workspaces to work, learn and meet.</h3> 
         <h5 class="intro-msg-signup">sign up for deskpass</h5>
-        <form class="form-inline">
-          <div class="form-group">
-            <div class="icon-addon addon-lg">
-              <input type="email" class="form-control" id="viewer-email" placeholder="Email Address">
-              <label for="email" class="fa fa-envelope-o" rel="tooltip" title="email"></label>
-            </div>
+        <form action="index1_submit" method="get" accept-charset="utf-8" class="form-wrapper">
+          <div class="form-section" id="email-input">              
+              <input type="email" id="email" placeholder="Email Address" name="user_mail">
+              <label for="email" class="fa fa-envelope-o"></label>
           </div>
-          <div class="form-group">
-            <div class="form-zip">
-              <input type="text" class="form-control" id="viewer-zip" placeholder="Zip">
-              <label class="sr-only" for="viewer-zip">Zip</label>
-            </div>
+          <div class="form-section" id="zip-input">
+              <input type="text" id="zip" placeholder="Zip" name="user_zip">
+              <label class="sr-only" for="zip">Zip</label>
           </div>
-          <button type="submit" class="btn btn-primary btn-form-custom">Lets's Go!</button>
-        </form> 
+          <button type="submit" class="btn btn-success btn-form-custom">Lets's Go!</button>
+        </form>
       </div>  
     </section> 
 

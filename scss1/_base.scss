@@ -11,15 +11,8 @@
 //** Background color for `<body>`.
 $body-bg:               $grey;
 
-/*html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}*/
 a{
 	font-size: 1.1em;
-	//font-weight: bolder;
 	text-decoration: none;
 }
 ul{
@@ -28,16 +21,22 @@ ul{
 li{
 	text-decoration: none;
 }
+//------ CONTAINER FOR EACH SECTION--------------------------
+.content-panel{
+	padding: 45px 20px;
+	margin-bottom: 50px;
+	text-align: center;
 
-// Landing section
+	@media screen and (min-width: 820px) and (max-width: 1099px) {
+		padding: 115px 50px;
+	}
 
+	@media screen and (min-width: 1100px){
+		padding: 115px 50px;
+	}  
+} 
+//--------------------------------------------------------------
 
-
-//---- end of Landing Section 
-
-.intro-msg-signup{
-	color: $red;
-}
 .fa-envelope-o{
 	color: $active-link-color;
 }

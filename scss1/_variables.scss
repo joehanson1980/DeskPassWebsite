@@ -19,6 +19,7 @@ $light-grey: #F6F6F6;
 // Fonts
 
 $font-Sans: 'Open Sans', sans-serif;
+$font-Lora: 'Lora', serif;
 
 //-----------------------------------------------------------------
 
@@ -102,6 +103,10 @@ $btn-danger-color:               			$yellow;
 $btn-danger-bg:                				$red;
 $btn-danger-border:             			$btn-danger-bg;
 
+$btn-success-color:               			$blue;
+$btn-success-bg:                			$aqua;
+$btn-success-border:             			$btn-success-bg;
+
 
 
 //-------------------------------------------------------------------------
@@ -125,17 +130,16 @@ $screen-lg:                  				1200px;
 //## Define the maximum width of `.container` for different screen sizes.
 
 // Small screen / tablet
-$container-tablet:             (720px + $grid-gutter-width) !default;
+$container-tablet:             (900px + $grid-gutter-width) !default;
 //** For `$screen-sm-min` and up.
 $container-sm:                 $container-tablet !default;
-
 // Medium screen / desktop
-$container-desktop:            (940px + $grid-gutter-width) !default;
+$container-desktop:            (1100px + $grid-gutter-width) !default;
 //** For `$screen-md-min` and up.
 $container-md:                 $container-desktop !default;
 
 // Large screen / wide desktop
-$container-large-desktop:      (1140px + $grid-gutter-width) !default;
+$container-large-desktop:      (1250px + $grid-gutter-width) !default;
 //** For `$screen-lg-min` and up.
 $container-lg:                 $container-large-desktop !default;
 
